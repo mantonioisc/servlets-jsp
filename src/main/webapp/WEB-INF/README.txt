@@ -1,6 +1,10 @@
 CREACION DEL PROYECTO
 $ mvn archetype:create -DgroupId=examples -DartifactId=servlets-jsp -DpackageName=examples.servlets -DarchetypeArtifactId=maven-archetype-webapp
 
+IMPORTACION A SUBVERSION
+svn import servlets-jsp svn://localhost/servlets-jsp
+Especificar el directorio de nuevo ya que pondría los recursos en raíz sin
+
 CORRER EL PROYECTO
 Se puede correr con jetty o tomcat
 +Con jetty ejecutar
@@ -20,7 +24,7 @@ Se puede correr con jetty o tomcat
   	Para pararlo y desdeployarlo
   		mvn tomcat:undeploy
 	Tambien se puede usar tomcat:redeploy para evitarse tantos pasos
-	Para m�s informaci�n de tomcat 
+	Para más información de tomcat 
 		$ mvn help:describe -Dplugin=tomcat
 
 DESCRIPCION
