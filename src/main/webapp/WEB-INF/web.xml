@@ -1,0 +1,83 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	
+  <display-name>Head First Servlet's and JSP based examples</display-name>
+  
+  <!-- Filters -->
+  
+  <!-- Context parameters -->
+  <context-param>
+  	<param-name>context-parameter</param-name>
+  	<param-value>application parameter</param-value>
+  </context-param>
+  
+  <!-- Listeners -->
+  <listener>
+  	<listener-class>examples.servlets.listeners.SampleServletContextListener</listener-class>
+  </listener>
+  
+  <listener>
+  	<listener-class>examples.servlets.listeners.SampleServletRequestListener</listener-class>
+  </listener>
+  
+  <!-- Attribute Listener -->
+  <listener>
+  	<listener-class>examples.servlets.listeners.SampleSevletContextAttributeListener</listener-class>
+  </listener>
+  
+  <listener>
+  	<listener-class>examples.servlets.listeners.SampleServletRequestAttributeListener</listener-class>
+  </listener>
+  
+  <!-- Servlets -->
+  <servlet>
+  	<servlet-name>LoadOnStartupExample</servlet-name>
+  	<servlet-class>examples.servlets.LoadOnStartupExampleServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>RequestDispatcherExample</servlet-name>
+  	<servlet-class>examples.servlets.RequestDispatcherExampleServlet</servlet-class>
+  	<init-param>
+  		<param-name>servlet-parameter</param-name>
+  		<param-value>servlet paremeter</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>RequestDispatcherExample</servlet-name>
+  	<url-pattern>/requestDistpatcherExample.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DownloadFile</servlet-name>
+  	<servlet-class>examples.servlets.DownloadFileServlet</servlet-class>
+  	<init-param>
+  		<param-name>file</param-name>
+  		<param-value>/WEB-INF/README.txt</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>type</param-name>
+  		<param-value>text/plain</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DownloadFile</servlet-name>
+  	<url-pattern>/download</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ShowCode</servlet-name>
+  	<servlet-class>examples.servlets.DisplayPageServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ShowCode</servlet-name>
+  	<url-pattern>/code</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
