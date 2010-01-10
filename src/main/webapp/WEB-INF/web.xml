@@ -5,6 +5,35 @@
 	
   <display-name>Head First Servlet's and JSP based examples</display-name>
   
+  <!-- Misc elements -->
+  <welcome-file-list>
+  	<welcome-file>home.html</welcome-file><!-- this one does not exist -->
+  	<welcome-file>index.jsp</welcome-file>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <session-config>
+  	<session-timeout>5</session-timeout><!-- in minutes -->
+  </session-config>
+  
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<scripting-invalid>true</scripting-invalid>
+  	</jsp-property-group>
+  </jsp-config>
+  
+  <!-- Error pages -->
+  <error-page>
+  	<error-code>404</error-code><!-- not found -->
+  	<location>/dir/notFound.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type></exception-type>
+  	<location>/dir/printStackTrace.jsp</location>
+  </error-page>
+  
   <!-- Filters -->
   
   <!-- Context parameters -->
@@ -78,6 +107,24 @@
   <servlet-mapping>
   	<servlet-name>ShowCode</servlet-name>
   	<url-pattern>/code</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>JspParams</servlet-name>
+  	<jsp-file>/jspInitParams.jsp</jsp-file>
+  	<init-param>
+  		<param-name>title</param-name>
+  		<param-value>jsp parameters sample usage</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>content</param-name>
+  		<param-value>Your must use &lt;servlet&gt; element with a &lt;jsp-file&gt; instaead of &lt;servlet-class&gt;</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>JspParams</servlet-name>
+  	<url-pattern>/jspInitParams.jsp</url-pattern>
   </servlet-mapping>
   
 </web-app>
