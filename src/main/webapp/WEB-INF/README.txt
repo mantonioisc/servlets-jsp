@@ -37,4 +37,6 @@ DESCRIPCION
   		<user username="gillian" password="seed" roles="junker"/>
 	</tomcat-users>
 	Y deployar la aplicación a tomcat. Esto solo funcionará en tomcat todo lo demás debería ser accesible con otro server.
-	 
+	+Login Jetty
+	Se creo un jetty-web.xml y se hace referencia a un security realm en un property file donde se definen lo usuarios
+	No se necesita hacer más que jetty:run
