@@ -28,3 +28,13 @@ Se puede correr con jetty o tomcat
 		$ mvn help:describe -Dplugin=tomcat
 
 DESCRIPCION
+	+Login
+	Solo esta protegidas por login las paginas en el folder secured/
+	Las páginas de login estan en el folder login/ y la configuración esta en el web.xml <login-config>
+	Para las partes de la aplicación con login, copiar esto a $CATALINA_HOME/conf/tomcat-users.xml
+	<tomcat-users>
+  		<role rolename="junker"/>
+  		<user username="gillian" password="seed" roles="junker"/>
+	</tomcat-users>
+	Y deployar la aplicación a tomcat. Esto solo funcionará en tomcat todo lo demás debería ser accesible con otro server.
+	 

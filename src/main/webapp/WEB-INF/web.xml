@@ -23,6 +23,30 @@
   	</jsp-property-group>
   </jsp-config>
   
+  <!-- Authentication & Authorization -->
+  <login-config>
+  	<auth-method>FORM</auth-method>
+  	<form-login-config>
+  		<form-login-page>/login/loginPage.html</form-login-page>
+  		<form-error-page>/login/loginError.html</form-error-page>
+  	</form-login-config>
+  </login-config>
+  
+  <security-constraint>
+  	<web-resource-collection>
+  		<web-resource-name>Secured pages</web-resource-name>
+  		<url-pattern>/secured/*</url-pattern>
+  		
+  		<http-method>GET</http-method>
+  		<http-method>POST</http-method>
+  		<http-method>HEAD</http-method>
+  	</web-resource-collection>
+  	
+  	<auth-constraint>
+  		<role-name>junker</role-name>
+  	</auth-constraint>
+  </security-constraint>
+  
   <!-- Error pages -->
   <error-page>
   	<error-code>404</error-code><!-- not found -->
@@ -58,6 +82,10 @@
   <!-- Listeners -->
   <listener>
   	<listener-class>examples.servlets.listeners.SampleServletContextListener</listener-class>
+  </listener>
+  
+  <listener>
+  	<listener-class>examples.servlets.listeners.SampleHttpSessionListener</listener-class>
   </listener>
   
   <listener>
@@ -122,6 +150,17 @@
   	<url-pattern>/code</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>Logout</servlet-name>
+  	<servlet-class>examples.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Logout</servlet-name>
+  	<url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- JSP init parameters -->
   <servlet>
   	<servlet-name>JspParams</servlet-name>
   	<jsp-file>/jspInitParams.jsp</jsp-file>
