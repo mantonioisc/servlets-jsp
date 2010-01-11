@@ -16,6 +16,8 @@
 	<br/>
 	<a href="ignoreEL.jsp">EL is ignored in this page</a>
 	<br/>
+	<a href="tagInvocation.jsp">Custom tags</a>
+	<br/>
 	<a href="secured/securedPage.html">Login to see secured elements</a>
 	<br/>
 	<a href="logout.do">Logout just in case</a>
