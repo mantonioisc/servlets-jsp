@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+  <tlib-version>1.0</tlib-version>
+  <uri>myTags</uri>
+  <tag>
+  	<description>Loop over a list and execute the body</description>
+  	<name>loop</name>
+  	<tag-class>examples.servlets.tags.LoopTag</tag-class>
+  	<body-content>scriptless</body-content>
+  	<attribute>
+  		<name>values</name>
+  		<type>java.util.List</type>
+  		<required>true</required>
+  		<rtexprvalue>true</rtexprvalue>
+  	</attribute>
+  	<attribute>
+  		<name>var</name>
+  		<type>java.lang.String</type><!-- this is the default -->
+  		<required>true</required>
+  		<rtexprvalue>false</rtexprvalue><!-- the default too -->
+  	</attribute>
+  </tag>
+  <tag>
+  	<name>say</name>
+  	<tag-class>examples.servlets.tags.RepeatTag</tag-class>
+  	<body-content>empty</body-content>
+  	<attribute>
+  		<name>word</name>
+  		<required>true</required>
+  	</attribute>
+  	<attribute>
+  		<name>times</name>
+  		<type>java.util.Integer</type>
+  		<required>true</required>
+  		<rtexprvalue>true</rtexprvalue>
+  	</attribute>
+  </tag>
+</taglib>
