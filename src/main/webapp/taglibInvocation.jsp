@@ -32,18 +32,25 @@
 	</p>
 	
 	<hr/>
+	<b>Using dynamic attributes in a tag</b>
+	<p>
+		<mine:dynamic mgs="MGS4" castlevania="Symphony of the Night" GoW="God of War III" uncharted="Uncharted 2"/>
+	</p>
+	
+	<hr/>
 	
 	<b>Now calling some old crappy tags with TagSupport</b>
 	<p>
 		<ul>
-			<crappy:loop values="${applicationScope.list}" var="value">
+			<crappy:loop val="${applicationScope.list}" var="value">
 				<li>${value}</li>
 			</crappy:loop>
 		</ul>
 	</p>
 	Yes they do the same
 	<p>
-		<crappy:say word="crappy" times="6"/>
-	</p>
+		<crappy:say word="crappy" times="${9*2}"></crappy:say><!-- Just put and space between the tags and you are screwed -->
+	</p>	
+	
 </body>
 </html>
