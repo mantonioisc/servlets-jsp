@@ -1,0 +1,49 @@
+Lista Ejemplos Servlets y JSP
+
++Configurar con maven deployando a tomcat con el plugin(jar provided de servlet, jstl): ver README.txt
+
++ServletInit parameters
++ContextIniParameters
++Usar Load on startup: solo se carga el servlet no se usa ni se mapea(ver logs del container)
++que el servlet forwarde el request al Jsp con RequestDispatcher
++Usar init, destroy(solo se logean los eventos)
++Uso de cookies en el servlet(añadir, obtener)
++Uso de request parameters y request headers(al log)
+Jsp que muestre todos esos parametros con EL(mostrar las cookies y demás)
++Hacer un servlet que descargue un archivo con getResourceAsStream() y get ServletOutputStream: se define con init params
+
+Manejo de Session, Request y App context y display en un JSP con EL
+Usar página de error directamente con errorPage y isErrorPage
+
++ServletContextListener, 
++ServletContextAtributeListener,
++HttpSessionListener, 
++HttpSessionAtributeListener, 
++HttpSessionBindingLister, 
++ServletRequestListener, 
++ServletRequestAtributeListener
+
++Clases de prueba de los listeners de HttpSession: un filter que hace una session sino la hay y mete un atributo que implementa HttpSessionBindingListener
+
+EL con forEach, if, choose(when, otherwise), 
++Pagina que use c:out para escapar xml(mostrar el web.xml o que un servlet le pasen el nombre de un jsp lo cargue como texto y lo mande al request como string)
+
++Crear un simpleTagHandler
++Crear un TagHandler clásico
++Crear un tag file
++Un tag con multiples atributos: imprime lo que se le pasa en una tabla
+
++Configurar welcome-file-list
++Configurar páginas de error para excepciones y códigos de error
++Crear una error page: acceso a objecto exception por page context vía EL
++Setear el timeout de sesión: 5 minutos
++Usar un jspconfig y parametros de inicio para el jsp acceder con EL: no se puede accesar con EL ¬¬ la espeficación es un fraude
++Crear una página con EL ignored
++Deshabilitar el scripting: no funciona co jetty
+
++Usar authentication para ciertos servlets: con FORM y en tomcat
++Crear una página de login con FORM para otros servlets: login y error page y un recurso seguro que tiene link para el logout
++Crear servlet de logout que invalide la session
+
++Crear un filter que logee que se esta accediendo
++Inventarme una forma para usar los request y response wrappers: nada original solo creando los wrappers
